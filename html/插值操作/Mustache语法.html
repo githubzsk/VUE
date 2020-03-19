@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/vue.js"></script>
+
+	</head>
+	<body>
+		<div id="app">
+			<h1>{{name}}</h1>
+			<h2>{{firstName + lastName}}</h2>
+			<h3>{{firstName}}{{lastName}}</h3>
+			<h4>{{counter*2}}</h4>
+		</div>
+	</body>
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data:{
+				name: '张尚坤',
+				firstName: '张嗯嗯',
+				lastName: '尚坤嗯呢',
+				counter: 100
+			}
+		})
+	</script>
+</html>
