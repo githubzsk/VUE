@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../../js/vue.js"></script>
+	<body>
+		<div id="app">
+			<!-- <img src="{{imgUrl}}" /> 错误的用法，动态属性不能用Mustache语法 -->
+			<img v-bind:src="imgUrl" />
+			<a 	v-bind:href="superLink">啊哈哈</a>
+			<a :href="superLink">v-bind语法糖</a>
+		</div>
+	</body>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				imgUrl: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2374522589,3944995347&fm=26&gp=0.jpg',
+				superLink: 'www.baidu.com'
+			}
+		})
+	</script>
+</html>
