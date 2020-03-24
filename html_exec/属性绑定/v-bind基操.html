@@ -4,26 +4,19 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script src="../../js/vue.js"></script>
-		<style>
-			[v-cloak]{
-			    display: none;
-			}
-		</style>
 	</head>
 	<body>
-		<div id="app" v-cloak>
-			<h1 >{{message}}</h1>
+		<div id="app">
+			<img v-bind:src="imgUrl" />
 		</div>
 	</body>
 	<script type="text/javascript">
-	setTimeout(function(){
 		const app = new Vue({
-			el: '#app',
+			el:'#app',
 			data:{
-				message: 'zsk',
-				info: '达到遮盖语法的效果'
+				message: 'Hello vue',
+				imgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3878426182,3543589008&fm=26&gp=0.jpg'
 			}
 		})
-	},1000)
 	</script>
 </html>

@@ -4,26 +4,19 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script src="../../js/vue.js"></script>
-		<style>
-			[v-cloak]{
-			    display: none;
-			}
-		</style>
 	</head>
 	<body>
-		<div id="app" v-cloak>
-			<h1 >{{message}}</h1>
+		<div id="app">
+			<h1>{{message}}</h1>
+			<h1 v-pre>{{message}}达到输出语法的作用</h1>
 		</div>
 	</body>
 	<script type="text/javascript">
-	setTimeout(function(){
 		const app = new Vue({
 			el: '#app',
 			data:{
-				message: 'zsk',
-				info: '达到遮盖语法的效果'
+				message: 'zsk'
 			}
 		})
-	},1000)
 	</script>
 </html>
