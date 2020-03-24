@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app" @click="divClick()">
+			aaaaa 
+			<button type="button" @click.stop="btnClick">button1</button> <!-- .stop 只触发btn 不触发div -->
+		
+		
+	<!-- 	.prevent修饰符作用，阻止表表单自动提交 -->
+		<br>
+		<form action="testaction" method="post">
+			
+			<input type="submit" value="提交"  v-on:click.prevent="mySubmit('提交信息')"/>
+		</form>
+		<!-- 监听某个键盘的键帽  按确认键监听-->
+		<input type="text" v-on:keyup.enter="keyClick" />
+		</div>
+	</body>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				message: '你好啊'
+			},
+			methods:{
+				btnClick(){
+					console.log("btnClick")
+				},
+				divClick(){
+					console.log("divClick")
+				},
+				mySubmit(info){
+					console.log('我自己提交，不要表单提交',info)
+				},
+				keyClick(){
+					console.log('keyup事件')
+				}
+				
+			}
+		})
+	</script>
+</html>

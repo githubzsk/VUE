@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/vue.js"></script>
+		<style type="text/css">
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 在遍历的过程中不获取下标（索引） -->
+			<ul>
+				<li v-for="item in names">{{item}}</li>
+			</ul>
+			<!-- 在遍历的过程中获取下标（索引）第一个参数为 item 2 is index --> 
+			<ul>
+				<li v-for="(bbb,aaa) in names">{{aaa}} {{bbb}}</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				names:['zsk','zz','cfy','cf']
+			}
+		})	
+	</script>
+</html>

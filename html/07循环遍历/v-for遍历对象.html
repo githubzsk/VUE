@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/vue.js"></script>
+		<style type="text/css">
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<!-- 在遍历对象的过程中，如果只获取一个值，则获取的是value-->
+			<ul>
+				<li v-for="item in info">{{item}}</li>
+			</ul>
+			<!-- 获取key和value-->
+			<ul>
+				<li v-for="(value,key) in info">{{value}}--{{key}}</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				info:{
+					name: 'zsk',
+					age: 18,
+					height: 1.88
+				}
+			}
+		})	
+	</script>
+</html>

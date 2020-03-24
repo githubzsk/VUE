@@ -7,14 +7,24 @@
 	</head>
 	<body>
 		<div id="app">
-			<h1>{{message}}</h1>
+			<h1>{{count}}</h1>
+			<button v-on:click="increment">+</button>
+			<button @click="decremnt">-</button>
 		</div>
 	</body>
 	<script type="text/javascript">
 		const app = new Vue({
 			el: '#app',
 			data:{
-				message: '你好啊'
+				count: 0
+			},
+			methods:{
+				increment(){
+					this.count++
+				},
+				decremnt(){
+					this.count--
+				}
 			}
 		})
 	</script>

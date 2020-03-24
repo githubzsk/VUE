@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1>{{getPrice}}</h1>
+			<h1>{{getPrice}}</h1>
+			<h1>{{getPrice}}</h1>
+		</div>
+	</body>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				book:[
+					{id:100,name:'Unix编程艺术',price:119},
+					{id:100,name:'代码大全',price:133},
+					{id:100,name:'深入理解JVM',price:145},
+					{id:100,name:'计算机原理',price:23},
+				]
+			},
+			methods:{
+				getPrice1:function(){
+					console.log("进入了计算")
+					let resultPrice = 0;
+					for (var i = 0; i < this.book.length; i++) {
+						resultPrice +=this.book[i].price
+					}
+					return resultPrice;
+				}	
+			},
+			computed:{
+				getPrice(){
+					console.log("进入了计算")
+					let resultPrice = 0;
+					for (var i = 0; i < this.book.length; i++) {
+						resultPrice +=this.book[i].price
+					}
+					return resultPrice;
+				}
+			}
+		})
+	</script>
+</html>

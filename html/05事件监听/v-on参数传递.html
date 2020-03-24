@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="btn1Click">button1</button>
+			<button type="button" @click="btn1Click()">button1</button>
+			<button type="button" @click="btn2Click">button2</button><!-- 给有参方法不写括号，默认传参event -->
+			<button type="button" @click="btn2Click()">button2</button><!-- 给有参方法不传参，默认undefined -->
+			<button type="button" @click="btn2Click(123)">button2</button><!-- 给有参方法传参，正常 -->
+			<button type="button" @click="btn3Click(123,$event)">button5</button><!-- 可以通过$even传入事件 -->
+			<button type="button" @click="btn3Click()">button6</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				message: '你好啊'
+			},
+			methods:{
+				btn1Click(){
+					console.log('btn1Click')
+				},
+				btn2Click(abc){
+					console.log('-----btn2Click'+abc)
+				},
+				btn3Click(abc,event){
+					console.log('-----+++btn3Click',abc,event)
+				}
+			}
+		})
+	</script>
+</html>
