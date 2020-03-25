@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		
+		<!-- push('A') 往末尾加元素  
+		pop()从末尾删除元素  
+		shift()删除第一个元素
+		unshift()最前添加一个元素 
+		sort() 
+		reverse() 反转
+		splice() 删除/插入/替换元素-->
+		<div id="app">
+			<ul>
+				<li v-for="item in latter">{{item}}</li>
+			</ul>
+			<button type="button" @click="btnClick">push</button>
+			<button type="button" @click="btnClickpop">pop</button>
+			<button type="button" @click="btnClickreverse">reverse</button>
+			<button type="button" @click="btnSplice">splice</button>
+			<!-- 非响应式 -->
+			<button type="button" @click="changeLatter">change</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				latter:['A','B','C','D','E','F']
+			},
+			methods:{
+				btnClick(){
+					this.latter.push('G');
+				},
+				btnClickpop(){
+					this.latter.pop()
+				},
+				btnClickreverse(){
+					this.latter.reverse()
+				},
+				btnSplice(){
+					this.latter.splice(1,0);
+				},
+				changeLatter(){
+					this.latter[2] = '哈哈哈'
+					console.log(this.latter)
+				}
+			}
+		})
+	</script>
+</html>
