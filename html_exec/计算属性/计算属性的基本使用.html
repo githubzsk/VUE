@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<h1>{{getTotalAge1()}}</h1>
+			<h1>{{getTotalAge1()}}</h1>
+			<h1>{{getTotalAge1()}}</h1>
+			<h1>{{getTotalAge2}}</h1>
+			<h1>{{getTotalAge2}}</h1>
+			<h1>{{getTotalAge2}}</h1>
+			
+			<h1>{{getTotalAge2}}</h1>
+			<h1>{{getTotalAge1()}}</h1>
+		</div>
+	</body>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				peoples:[
+					{name:'zsk1',age:22},
+					{name:'zsk2',age:24},
+					{name:'zsk3',age:23},
+					{name:'zsk4',age:26}
+				]
+			},
+			methods:{
+				getTotalAge1(){
+					let ages = 0;
+					console.log('getTotalAge1')
+					for (let i = 0 ; i < this.peoples.length; i++) {
+						ages += this.peoples[i].age
+					}
+					return ages;
+				}
+			},
+			computed:{
+				getTotalAge2(){
+					let ages = 0;
+					console.log('getTotalAge2')
+					for (let i = 0 ; i < this.peoples.length; i++) {
+						ages += this.peoples[i].age
+					}
+					return ages;
+				}
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app" @click="divClick">
+			aaa
+			<button type="button" @click.stop="btnClick" >button</button>
+			
+			<input type="text" name="" id="" value="输入框" @keyup.enter="login()"/>
+		</div>
+	</body>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				message: '你好啊'
+			},
+			methods:{
+				btnClick(){
+					console.log('btnClick')
+				},
+				divClick(){
+					console.log('divClick')
+				},
+				login(){
+					console.log('login....')
+				}
+			}
+		})
+	</script>
+</html>
