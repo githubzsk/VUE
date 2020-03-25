@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="(item1,item2) in people">{{item1}}-----{{item2}}</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				people:{
+					name: 'zsk',
+					age: 27,
+					heigth: 1.88
+				}
+			}
+		})
+	</script>
+</html>
