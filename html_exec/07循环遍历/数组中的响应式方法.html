@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../js/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<script src="../../js/jquery/jquery3.4.1.js"></script>
+		<script src="../../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div id="app" class="container">
+			
+			<!-- push('A') 往末尾加元素  
+			pop()从末尾删除元素  
+			shift()删除第一个元素
+			unshift()最前添加一个元素 
+			sort() 
+			reverse() 反转
+			splice() 删除/插入/替换元素-->
+			<ul>
+				<li v-for="(item,index) in latter">{{index}}---{{item}}</li>
+			</ul>
+			<button type="button" @click="btnPush">push</button>
+			<button type="button" @click="btnPop">pop</button>
+			<button type="button" @click="btnShift">shift</button>
+			<button type="button" @click="btnUnshif">unshift</button>
+			<button type="button" @click="btnReverse">reverse</button>
+			<button type="button" @click="btnSplice">splice</button>
+<!-- 			<button type="button" @click="btnReverse">splice-2</button> -->
+		</div>
+	</body>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				latter:['A','B','C','D','E']
+			},
+			methods:{
+				btnPush(){
+					this.latter.push('F')
+				},
+				btnPop(){
+					this.latter.pop()
+				},
+				btnShift(){
+					this.latter.shift()
+				},
+				btnUnshif(){
+					this.latter.unshift('0')
+				},
+				btnReverse(){
+					this.latter.reverse()
+				},
+				btnSplice(){
+					this.latter.splice(1,0,'b1','b2','b3')
+				}
+			}
+		})
+	</script>
+</html>
