@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../../js/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../../js/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<script src="../../../js/jquery/jquery3.4.1.js"></script>
+		<script src="../../../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div id="app" class="container">
+			<cpn  @itemclick='listenCliick' ></cpn>
+		</div>
+	</body>
+	<template id="tmp">
+		<div>
+			<button type="button"  v-for="itme in categories" @click="btnClick(itme)">{{itme.name}}</button>
+		</div>
+	</template>
+	<script type="text/javascript">
+		//子组件
+		const cpn  = {
+			template: '#tmp',
+			data(){
+				return{
+					categories:[
+						{id:'a',name:'热门推荐'},
+						{id:'b',name:'手机数码'},
+						{id:'c',name:'家用电器'},
+						{id:'d',name:'电脑办公'}
+					]	
+				}
+			},
+			methods: {
+				btnClick(item){
+					this.$emit('itemclick',item);
+				}
+			}
+		}
+		//父组件
+		const app = new Vue({
+			el: '#app',
+			data:{
+				message: '你好啊'
+				
+			},
+			components:{
+				cpn
+			},
+			methods:{
+				listenCliick(item){
+					console.log(item)
+				}
+			}
+		})
+	</script>
+</html>

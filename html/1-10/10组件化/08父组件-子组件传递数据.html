@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../../js/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../../js/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<script src="../../../js/jquery/jquery3.4.1.js"></script>
+		<script src="../../../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div id="app" class="container">
+			<cpn v-bind:cmovies="movies" :cmessage="message"></cpn>
+		</div>
+	</body>
+	<template id="tmp">
+		<div>
+			<ul>
+				<li v-for="item in cmovies" >{{item}}</li>
+			</ul>
+			<h1>{{cmessage}}</h1>
+		</div>
+	</template>
+	<script type="text/javascript">
+		
+		Vue.component('cpn',{
+			template:'#tmp',
+			//props: ['cmovies','cmessage']
+			props:{
+				cmovies:{
+					type: Array,
+					default: []
+				},
+				cmessage: {
+					type: String,
+					default: 'none',
+					required: false
+				}
+			}
+		})
+		
+		const app = new Vue({
+			el: '#app',
+			data:{
+				message: '你好啊',
+				movies:['海王','海贼王','海尔兄弟']
+			}
+		})
+	</script>
+</html>
