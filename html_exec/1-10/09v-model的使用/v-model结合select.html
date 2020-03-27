@@ -10,15 +10,24 @@
 	</head>
 	<body>
 		<div id="app" class="container">
-			<h1>{{message}}</h1>
+			<select v-model="city">
+				<option value ="1">西安</option>
+				<option value ="2">上海</option>
+				<option value ="3">北京</option>
+				<option value ="4">广州</option>
+				<option value ="5">杭州</option>
+				<option value ="6">南京</option>
+			</select>
 		</div>
 	</body>
 	<script type="text/javascript">
 		const app = new Vue({
 			el: '#app',
 			data:{
-				message: '你好啊'
-			}
+				message: '你好啊',
+				city: 3
+			},
+			
 		})
 	</script>
 </html>

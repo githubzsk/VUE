@@ -10,7 +10,9 @@
 	</head>
 	<body>
 		<div id="app" class="container">
-			<h1>{{message}}</h1>
+			<!-- lazy修饰符 -->
+			<input type="text" v-model.lazy="message"/>
+			<h2>您所输入的是：{{message}}</h2>
 		</div>
 	</body>
 	<script type="text/javascript">

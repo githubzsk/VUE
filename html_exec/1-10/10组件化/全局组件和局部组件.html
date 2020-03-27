@@ -10,12 +10,46 @@
 	</head>
 	<body>
 		<div id="app" class="container">
-			<h1>{{message}}</h1>
+			<cpn></cpn>
+			<cpn2></cpn2>
+		</div>
+		<div id="app2">
+			<cpn></cpn>
 		</div>
 	</body>
 	<script type="text/javascript">
-		const app = new Vue({
+		
+		const tmp = Vue.extend({
+			template:
+			`
+			<div>
+				<h2>我是全局组件</h2>
+				<h2>我也是全局组件</h2>
+			</div>
+			`
+		})
+		const tmp2 = Vue.extend({
+			template:
+			`
+			<div>
+				<h2>我是局部组件</h2>
+				<h2>我也是局部组件</h2>
+			</div>
+			`
+		})
+		Vue.component('cpn',tmp)
+		
+		new Vue({
 			el: '#app',
+			data:{
+				message: '你好啊'
+			},
+			components:{
+				cpn2: tmp2
+			}
+		})
+		new Vue({
+			el: '#app2',
 			data:{
 				message: '你好啊'
 			}

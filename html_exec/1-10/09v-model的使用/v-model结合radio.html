@@ -10,14 +10,21 @@
 	</head>
 	<body>
 		<div id="app" class="container">
-			<h1>{{message}}</h1>
+			<input type="radio"  id="shanghai" value="上海" v-model="city"/>
+			<label for="shanghai">上海</label>
+			<input type="radio"  id="xian" value="西安" v-model="city"/>
+			<label for="xian">西安</label>
+			<input type="radio"  id="wuhan" value="武汉" v-model="city"/>
+			<label for="wuhan">武汉</label>
+			<h2>您所选择的是:{{city}}</h2>
 		</div>
 	</body>
 	<script type="text/javascript">
-		const app = new Vue({
+		new Vue({
 			el: '#app',
 			data:{
-				message: '你好啊'
+				message: '你好啊',
+				city: '西安'
 			}
 		})
 	</script>

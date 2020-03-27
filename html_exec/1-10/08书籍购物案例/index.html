@@ -29,9 +29,9 @@
 					<td>{{item.limit}}</td>
 					<td class="row">
 						<div class="col-md-6">
-							<button type="button" class="btn btn-primary col-md-4 " v-bind:disabled="item.count >= item.limit" v-on:click="changeCount(index,'increment')">+</button>
+							<button type="button" class="btn btn-default col-md-4" v-bind:disabled="item.count >= item.limit" v-on:click="changeCount(index,'increment')">+</button>
 							<span class="col-md-4">{{item.count}}</span>
-							<button type="button" class="btn btn-primary col-md-4" v-bind:disabled="item.count <= 0"   v-on:click="changeCount(index,'decrement')">-</button>
+							<button type="button" class="btn btn-default col-md-4" v-bind:disabled="item.count <= 0"   v-on:click="changeCount(index,'decrement')">-</button>
 						</div>
 					</td>
 					<td>

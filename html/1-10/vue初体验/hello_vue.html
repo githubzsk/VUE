@@ -4,12 +4,12 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
-		<script src="../js/vue.js"></script>
+		<script src="../../../js/vue.js"></script>
 		
 	</head>
 	<body>
 		<div id="app">
-		<div>{{message}}</div>
+		<div>{{messages}}</div>
 		<h1>{{names}}</h1>
 		</div>
 		
@@ -18,7 +18,7 @@
 		const app = new Vue({
 			el: '#app',//用于挂载要管理的元素
 			data:{ //定义数据
-				message: '你好啊，李银河',
+				messages: '你好啊，李银河',
 				names: '张尚坤'
 			}
 		})
