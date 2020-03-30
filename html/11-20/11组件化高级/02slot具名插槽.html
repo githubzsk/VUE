@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../../js/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../../js/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<script src="../../../js/jquery/jquery3.4.1.js"></script>
+		<script src="../../../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div id="app" class="container">
+			<cpn><button  slot="center">替换中间</button></cpn>
+		</div>
+	</body>
+	<template id="tmp">
+		<div>
+			<slot name="left"><span>左边</span></slot>
+			<slot name="center"><span>中间</span></slot>
+			<slot name="right"><span>右边</span></slot>
+		</div>
+	</template>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				message: '你好啊'
+			},
+			components:{
+				cpn: {
+					template: '#tmp'
+				}
+			}
+		})
+	</script>
+</html>

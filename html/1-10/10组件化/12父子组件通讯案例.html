@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../../js/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../../js/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<script src="../../../js/jquery/jquery3.4.1.js"></script>
+		<script src="../../../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div id="app" class="container">
+			<cpn :number1="num1" :number2="num2" @num1change="num1change" @num2change="num2change"></cpn>
+			<h2>parent{{num1}}</h2>
+			<h2>parent{{num2}}</h2>
+		</div>
+	</body>
+	<template id="tmp">
+		<div>
+			<h2>{{number1}}</h2>
+			<h2>data{{dnumber1}}</h2>
+			<h2>prop{{number1}}</h2>
+		<!-- 	<input type="text" v-model="dnumber1" /> -->
+			<input type="text" v-bind:value="dnumber1" v-on:input="num1input"/>
+			<h2>{{number2}}</h2>
+			<h2>data{{dnumber2}}</h2>
+			<h2>prop{{number2}}</h2>
+			<!-- <input type="text" v-model="dnumber2" /> -->
+			<input type="text" v-bind:value="dnumber2" v-on:input="num2input"/>
+		</div>
+	</template>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				num1: '1',
+				num2: '2'
+			},
+			components: {
+				cpn: {
+					template: '#tmp',
+					props: {
+						number1: String,
+						number2: String
+					},
+					data(){
+						return {
+							dnumber1: this.number1,
+							dnumber2: this.number2
+						}
+					},
+					methods: {
+						num1input(event){
+							this.dnumber1 = event.target.value
+							this.$emit('num1change',this.dnumber1)
+						},
+						num2input(event){
+							this.dnumber2 = event.target.value
+							this.$emit('num2change',this.dnumber2)
+						}
+					}
+				}
+			},
+			methods:{
+				num1change(value){
+					this.num1 = value
+				},
+				num2change(value){
+					this.num2 = value
+				}
+			}
+			
+		})
+	</script>
+</html>

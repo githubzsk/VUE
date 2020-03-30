@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../../js/vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../../js/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<script src="../../../js/jquery/jquery3.4.1.js"></script>
+		<script src="../../../js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div id="app" class="container">
+			<cpn></cpn>
+			<cpn>
+				<div slot-scope="slot">
+					<span v-for="itme in slot.data">{{itme}}-</span>
+				</div>
+			</cpn>
+			<cpn> </cpn>
+		</div>
+	</body>
+	<template id="tmp">
+		<div>
+			<slot v-bind:data="pLanguage">
+				<ul>
+					<li v-for="item in pLanguage">{{item}}</li>
+				</ul>	
+			</slot>
+		</div>
+	</template>
+	<script type="text/javascript">
+		const app = new Vue({
+			el: '#app',
+			data:{
+				message: '你好啊'
+			},
+			components:{
+				cpn: {
+					template: '#tmp',
+					data(){
+						return{
+							pLanguage:['JavaScript','Swift',"C++","Java",'golang']
+						}
+					}
+				},
+				
+			}
+		})
+	</script>
+</html>
